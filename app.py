@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import json
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 
@@ -38,4 +39,7 @@ def list_proposals():
     return render_template('proposals.html', proposals=proposals)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=9999)
+    # Use Railway's PORT environment variable, fallback to 9999 for local development
+    port = int(os.environ.get('PORT', 9999))
+    # Use 0.0.0.0 to bind to all interfaces (required for Railway)
+    app.run(debug=False, host='0.0.0.0', port=port)

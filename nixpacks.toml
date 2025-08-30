@@ -1,4 +1,4 @@
 # nixpacks.toml - Railway's configuration file for Flask apps
 
 [start]
-cmd = "gunicorn app:app"
+cmd = "gunicorn simple_test:app"

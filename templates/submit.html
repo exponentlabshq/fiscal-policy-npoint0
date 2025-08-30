@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Proposal - Proposer.btc</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .back-link { margin-bottom: 20px; }
+        .back-link a { color: #007bff; text-decoration: none; }
+        .back-link a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="/">← Back to Landing Page</a>
+    </div>
+    
+    <h1>📝 Submit Your Proposal</h1>
+    
+    <form hx-post="/submit" hx-target="#result">
+        <div class="form-group">
+            <label>Title</label>
+            <input name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Subtitle</label>
+            <input name="subtitle" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" rows="3" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Problem Worth Solving</label>
+            <textarea name="problem" rows="2" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>GitHub Repository</label>
+            <input name="github" type="url" required>
+        </div>
+        
+        <div class="form-group">
+            <label>YouTube Demo Video</label>
+            <input name="youtube" type="url" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Email Address</label>
+            <input name="email" type="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Website</label>
+            <input name="website" type="url">
+        </div>
+        
+        <div class="form-group">
+            <label>ETA (Estimated Time)</label>
+            <input name="eta" placeholder="e.g., 6 months" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Investment Required (BTC)</label>
+            <input name="investment" type="number" step="0.00000001" required>
+        </div>
+        
+        <button type="submit">Submit Proposal</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <p><a href="/proposals">View All Proposals</a></p>
+</body>
+</html>

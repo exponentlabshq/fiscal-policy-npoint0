@@ -9,7 +9,11 @@ proposals = []
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('landing.html')
+
+@app.route('/submit')
+def submit_page():
+    return render_template('submit.html')
 
 @app.route('/submit', methods=['POST'])
 def submit_proposal():

@@ -1,19 +1,50 @@
-# Fiscal Policy 3.0: Decentralized Proposal Management System
+# 🚀 Proposer.btc - Bitcoin Proposal Platform
 
-A blockchain-based governance system for managing project proposals with dual-approval mechanisms and transparent fund tracking.
+A modern, beautiful web platform for Bitcoin innovators to submit proposals and connect with the community for funding and collaboration.
 
-## 🚀 Quickstart for Developers
+## 🌐 **Live Demo**
 
-### Prerequisites
-- Python 3.8+
-- pip (Python package manager)
+**Visit the live platform:** [https://fiscal-policy-npoint0-production.up.railway.app/](https://fiscal-policy-npoint0-production.up.railway.app/)
 
-### Installation & Setup
+## ✨ **Features**
+
+### **🎯 Landing Page**
+- **Modern, responsive design** with gradient backgrounds
+- **Clear value proposition** for Bitcoin proposers
+- **Compelling call-to-action** to submit proposals
+- **Feature highlights** showcasing platform benefits
+- **Platform statistics** to build trust and credibility
+
+### **📝 Proposal Submission System**
+- **Comprehensive form** for detailed proposal submission
+- **Required fields**: Title, subtitle, description, problem statement
+- **Links**: GitHub repository, YouTube demo, website, email
+- **Project details**: ETA, investment requirements in BTC
+- **HTMX integration** for smooth form submission
+
+### **📋 Proposal Management**
+- **View all submitted proposals** in an organized list
+- **Search and filter** capabilities
+- **Contact information** for each proposer
+- **Project status tracking**
+
+## 🛠 **Technology Stack**
+
+- **Backend**: Python Flask
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Styling**: Modern CSS with gradients and animations
+- **Interactive Elements**: HTMX for dynamic content
+- **Deployment**: Railway (production), Local development
+- **Version Control**: Git with GitHub integration
+
+## 🚀 **Quick Start**
+
+### **Local Development**
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/exponentlabshq/fiscal-policy-3.0.git
-   cd fiscal-policy-3.0
+   git clone https://github.com/exponentlabshq/fiscal-policy-npoint0.git
+   cd fiscal-policy-npoint0
    ```
 
 2. **Install dependencies**
@@ -21,143 +52,126 @@ A blockchain-based governance system for managing project proposals with dual-ap
    pip install -r requirements.txt
    ```
 
-3. **Start the Flask application**
+3. **Run the application**
    ```bash
    python3 app.py
    ```
-   
-   The API will be available at `http://localhost:9999`
 
-### 🧪 Testing the API
+4. **Open your browser**
+   - Main page: http://localhost:9999/
+   - Submit form: http://localhost:9999/submit
+   - View proposals: http://localhost:9999/proposals
 
-#### Manual Testing
-1. **Open your browser** and navigate to `http://localhost:9999`
-2. **Submit a test proposal** using the form
-3. **View submitted proposals** at `http://localhost:9999/proposals`
+### **Production Deployment**
 
-#### Automated Testing
-Run the comprehensive test suite:
-```bash
-python3 test_templates.py  # Validates HTML templates
-python3 test_api.py        # Tests actual API functionality
+The application is automatically deployed to Railway from the main branch:
+
+- **Platform**: Railway
+- **URL**: https://fiscal-policy-npoint0-production.up.railway.app/
+- **Auto-deploy**: Enabled (pushes to main trigger deployment)
+- **Health check**: `/health` endpoint for monitoring
+
+## 📁 **Project Structure**
+
 ```
-
-### 📁 Project Structure
-```
-fiscal-policy-3.0/
-├── app.py                 # Flask application (main API)
+fiscal-policy-npoint0/
+├── app.py                 # Main Flask application
 ├── requirements.txt       # Python dependencies
-├── test_templates.py     # Template validation tests
-├── test_api.py          # API functionality tests
-├── templates/            # HTML templates
-│   ├── index.html       # Proposal submission form
-│   ├── proposal.html    # Success confirmation
-│   └── proposals.html   # All proposals listing
-└── readme.md            # This file
+├── nixpacks.toml         # Railway deployment configuration
+├── templates/             # HTML templates
+│   ├── landing.html      # Beautiful landing page
+│   ├── submit.html       # Proposal submission form
+│   ├── proposals.html    # List all proposals
+│   └── proposal.html     # Individual proposal view
+├── test_api.py           # API testing utilities
+├── test_templates.py     # Template testing utilities
+└── README.md             # This file
 ```
 
-## 🏗️ Architecture Overview
+## 🌟 **Key Routes**
 
-This system implements an "Event of events" architecture where multiple entities interact to evaluate, approve, and monitor project proposals.
+- **`/`** - Landing page with platform introduction
+- **`/submit`** - Proposal submission form
+- **`/submit` (POST)** - Process proposal submission
+- **`/proposals`** - View all submitted proposals
+- **`/health`** - Health check endpoint for monitoring
 
-### Core Entities
+## 🎨 **Design Features**
 
-- **🚀 Proposer.btc**: Submits project proposals for funding consideration
-- **📋 Proposal.btc**: Represents individual project proposals and holds associated funds
-- **🏛️ Committee.btc**: Primary governance entity for proposal evaluation
-- **🛡️ Steward.btc**: Secondary governance entity for additional oversight
+- **Responsive design** that works on all devices
+- **Modern gradient backgrounds** with professional appearance
+- **Smooth hover effects** and transitions
+- **Clean typography** and spacing
+- **Professional color scheme** suitable for financial applications
 
-### Data Flow
+## 🔧 **Configuration**
 
-```mermaid
-graph TD
-    A[Proposer Submits Proposal] --> B[Proposal.btc Created]
-    B --> C[Committee.btc Votes]
-    C --> D[Steward.btc Votes]
-    D --> E{Both Approve?}
-    E -->|Yes| F[Project Proceeds]
-    E -->|No| G[Project Blocked]
-    F --> H[Funds Released]
-    G --> I[Funds Returned]
+### **Environment Variables**
+- `PORT` - Server port (default: 9999 for local, Railway sets this automatically)
+
+### **Railway Configuration**
+- **Builder**: Railpack (Python)
+- **Start Command**: `gunicorn app:app`
+- **Health Check**: `/health` endpoint
+- **Auto-restart**: On failure with retry logic
+
+## 🧪 **Testing**
+
+### **API Testing**
+```bash
+python3 test_api.py
 ```
 
-## 📋 API Endpoints
+### **Template Testing**
+```bash
+python3 test_templates.py
+```
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/` | GET | Proposal submission form |
-| `/submit` | POST | Submit new proposal |
-| `/proposals` | GET | List all submitted proposals |
+### **Manual Testing**
+- Test form submission with sample data
+- Verify proposal storage and retrieval
+- Check responsive design on different screen sizes
 
-## 🔧 Development
+## 🚀 **Deployment History**
 
-### Adding New Features
-1. **Modify `app.py`** for new routes and logic
-2. **Update templates** in the `templates/` directory
-3. **Add tests** to `test_api.py` for new functionality
-4. **Update requirements.txt** for new dependencies
+This project successfully overcame several deployment challenges:
 
-### Testing
-- **Template Tests**: `python3 test_templates.py`
-- **API Tests**: `python3 test_api.py`
-- **Manual Testing**: Use the web interface at `http://localhost:9999`
+1. **Initial setup** - Basic Flask app with templates
+2. **Railway configuration** - Learned Railway uses nixpacks.toml, not Procfile
+3. **Port configuration** - Fixed port binding issues for Railway
+4. **Production deployment** - Successfully deployed with Gunicorn WSGI server
 
-### Deployment
-- **Development**: `python3 app.py` (includes auto-reload)
-- **Production**: Use WSGI server (Gunicorn, uWSGI)
-
-## 📊 Current Status
-
-✅ **Proposer.btc API**: Fully functional with form submission, data storage, and listing  
-✅ **HTMX Integration**: Smooth form submission without page refresh  
-✅ **Template System**: All three templates working correctly  
-✅ **Data Persistence**: In-memory storage (ready for database integration)  
-✅ **Testing Suite**: Comprehensive validation of all components  
-
-## 🔮 Next Steps
-
-- [ ] Integrate database (SQLite/PostgreSQL) for persistent storage
-- [ ] Implement Committee.btc voting interface
-- [ ] Implement Steward.btc voting interface
-- [ ] Add fund tracking and North Star metrics
-- [ ] Deploy to production environment
-
-## 🤝 Contributing
+## 🤝 **Contributing**
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📝 License
+## 📄 **License**
 
-This project is part of the Fiscal Policy 3.0 initiative for decentralized governance and transparent fund allocation.
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🎯 **Future Enhancements**
+
+- **Database integration** (replace in-memory storage)
+- **User authentication** and proposal management
+- **Advanced search and filtering**
+- **Email notifications** for proposal updates
+- **Admin dashboard** for proposal review
+- **Blockchain integration** for proposal funding
+
+## 🌟 **About Proposer.btc**
+
+Proposer.btc is designed to be the premier platform for Bitcoin innovators to:
+- **Submit funding proposals** to the community
+- **Connect with investors** and collaborators
+- **Showcase innovative projects** in the Bitcoin ecosystem
+- **Build the future** of Bitcoin technology and infrastructure
 
 ---
 
-## 📚 Original System Specification
+**Built with ❤️ for the Bitcoin community**
 
-### The Actual Entities in this Event of events are the following:
-- **Proposer.btc**: The Proposer submits proposals
-- **Proposal.btc**: Each proposal submitted by a proposer.btc has a proposal.btc
-- **Committee.btc**: The Committee.btc makes a decision on a proposal: Yes or No
-- **Steward.btc**: The Steward.btc makes a decision on a proposal: Yes or No
-- **Submission (json payload)**: Every proposer.btc submits a submission containing:
-  - Timestamp
-  - Title
-  - Subtitle
-  - Description
-  - Problem Worth Solving
-  - Github
-  - YouTube Demo Video
-  - Email Address
-  - Website
-  - ETA
-  - Investment Required
-
-### Governance Flow
-A proposer represented by proposer.btc proposes a proposal represented by proposal.btc. The success of the proposal is judged by the growth of proposal.btc account which holds the funds generated by the proposer.btc related to their proposal. After the proposer.btc submits their proposal, the Committee and the Steward vote. The Committee.btc votes yes or no. The Steward.btc votes yes or no.
-
-### Proposal.btc
-Proposal.btc holds the funds associated with the success of proposer.btc's project. It allows anyone to view the progress of the proposal using the north star metric.
+*Deployed and maintained by the Exponent Labs team*

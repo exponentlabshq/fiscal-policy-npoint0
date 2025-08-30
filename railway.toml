@@ -2,14 +2,5 @@
 builder = "railpack"
 
 [deploy]
-startCommand = "python3 app.py"
+startCommand = "python app.py"
 healthcheckPath = "/health"
-restartPolicyType = "on_failure"
-restartPolicyMaxRetries = 10
-
-[[services]]
-name = "fiscal-policy-npoint0"
-port = 9999
-
-[deploy.envs]
-PORT = "9999"

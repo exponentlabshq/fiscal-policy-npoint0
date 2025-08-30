@@ -42,11 +42,6 @@ def list_proposals():
 def health_check():
     return jsonify({"status": "healthy", "message": "Proposer.btc is running!"})
 
-# Railway expects the app to be available as a variable
-# This is the standard pattern for Railway deployments
 if __name__ == '__main__':
-    # Use Railway's PORT environment variable, fallback to 9999 for local development
     port = int(os.environ.get('PORT', 9999))
-    # Use 0.0.0.0 to bind to all interfaces (required for Railway)
-    print(f"Starting Proposer.btc on port {port}")
-    app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port)

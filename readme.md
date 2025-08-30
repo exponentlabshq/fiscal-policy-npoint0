@@ -4,7 +4,26 @@ A modern, beautiful web platform for Bitcoin innovators to submit proposals and 
 
 ## 🌐 **Live Demo**
 
-**Visit the live platform:** [https://fiscal-policy-npoint0-production.up.railway.app/](https://fiscal-policy-npoint0-production.up.railway.app/)
+**🚀 Visit the live platform:** [https://fiscal-policy-npoint0-production.up.railway.app/](https://fiscal-policy-npoint0-production.up.railway.app/)
+
+### **🎯 What You'll See:**
+
+**Beautiful Landing Page** featuring:
+- **Hero Section**: "Ready to Build the Future of Bitcoin?" with compelling CTA
+- **Feature Highlights**: Innovation First, Community Driven, Funding Opportunities
+- **Platform Statistics**: 50+ proposals, 25+ projects funded, 1000+ community members, ₿150+ total investment
+- **Professional Design**: Modern gradients, smooth animations, and responsive layout
+
+**Interactive Elements**:
+- **Submit Your Proposal** button that leads to the submission form
+- **Responsive navigation** that works on all devices
+- **Modern UI/UX** with hover effects and smooth transitions
+
+### **📱 Try It Out:**
+1. **Visit the landing page** to see the beautiful design
+2. **Click "Submit Your Proposal"** to access the submission form
+3. **Navigate to `/proposals`** to see the proposals listing page
+4. **Test the responsive design** on different screen sizes
 
 ## 🚀 **Deploy to Railway**
 

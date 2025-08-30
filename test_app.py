@@ -12,5 +12,8 @@ def health():
     return "OK"
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 9999))
+    # Railway will set PORT environment variable
+    port = int(os.environ.get('PORT', 8080))
+    print(f"Starting app on port {port}")
+    print(f"PORT env var: {os.environ.get('PORT', 'not set')}")
     app.run(host='0.0.0.0', port=port)

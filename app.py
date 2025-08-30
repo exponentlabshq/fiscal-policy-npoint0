@@ -43,5 +43,7 @@ def health_check():
     return jsonify({"status": "healthy", "message": "Proposer.btc is running!"})
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 9999))
+    # Railway will set PORT environment variable, default to 8080
+    port = int(os.environ.get('PORT', 8080))
+    print(f"Starting Proposer.btc on port {port}")
     app.run(host='0.0.0.0', port=port)

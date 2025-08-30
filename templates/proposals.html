@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Proposals - Proposer.btc</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .proposal { background: #f8f9fa; padding: 15px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #007bff; }
+        .proposal h3 { margin: 0 0 10px 0; color: #007bff; }
+        .meta { color: #666; font-size: 0.9em; margin-bottom: 10px; }
+        .links a { margin-right: 15px; color: #007bff; text-decoration: none; }
+        .links a:hover { text-decoration: underline; }
+        .back { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="back">
+        <a href="/">← Back to Submit Proposal</a>
+    </div>
+    
+    <h1>📋 All Submitted Proposals</h1>
+    
+    {% if proposals %}
+        {% for proposal in proposals %}
+        <div class="proposal">
+            <h3>{{ proposal.title }}</h3>
+            <div class="meta">
+                <strong>Submitted:</strong> {{ proposal.timestamp }} | 
+                <strong>ETA:</strong> {{ proposal.eta }} | 
+                <strong>Investment:</strong> {{ proposal.investment }} BTC
+            </div>
+            <p><strong>Subtitle:</strong> {{ proposal.subtitle }}</p>
+            <p><strong>Description:</strong> {{ proposal.description }}</p>
+            <p><strong>Problem:</strong> {{ proposal.problem }}</p>
+            <div class="links">
+                <a href="{{ proposal.github }}" target="_blank">GitHub</a>
+                <a href="{{ proposal.youtube }}" target="_blank">YouTube Demo</a>
+                <a href="mailto:{{ proposal.email }}">Contact</a>
+                {% if proposal.website %}
+                <a href="{{ proposal.website }}" target="_blank">Website</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No proposals submitted yet.</p>
+    {% endif %}
+</body>
+</html>

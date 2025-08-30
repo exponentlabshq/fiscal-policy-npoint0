@@ -1,0 +1,18 @@
+<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    <h2>✅ Proposal Submitted Successfully!</h2>
+    <h3>{{ proposal.title }}</h3>
+    <p><strong>Subtitle:</strong> {{ proposal.subtitle }}</p>
+    <p><strong>Description:</strong> {{ proposal.description }}</p>
+    <p><strong>Problem:</strong> {{ proposal.problem }}</p>
+    <p><strong>GitHub:</strong> <a href="{{ proposal.github }}" target="_blank">{{ proposal.github }}</a></p>
+    <p><strong>YouTube:</strong> <a href="{{ proposal.youtube }}" target="_blank">{{ proposal.youtube }}</a></p>
+    <p><strong>Email:</strong> {{ proposal.email }}</p>
+    <p><strong>Website:</strong> <a href="{{ proposal.website }}" target="_blank">{{ proposal.website }}</a></p>
+    <p><strong>ETA:</strong> {{ proposal.eta }}</p>
+    <p><strong>Investment Required:</strong> {{ proposal.investment }} BTC</p>
+    <p><strong>Submitted:</strong> {{ proposal.timestamp }}</p>
+    
+    <p style="margin-top: 20px;">
+        <em>Your proposal has been submitted and is awaiting Committee.btc and Steward.btc review.</em>
+    </p>
+</div>

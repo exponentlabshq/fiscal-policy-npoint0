@@ -6,6 +6,12 @@ A modern, beautiful web platform for Bitcoin innovators to submit proposals and 
 
 **Visit the live platform:** [https://fiscal-policy-npoint0-production.up.railway.app/](https://fiscal-policy-npoint0-production.up.railway.app/)
 
+## 🚀 **Deploy to Railway**
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/new?template=https://github.com/exponentlabshq/fiscal-policy-npoint0)
+
+**One-click deployment to Railway** - Get your own instance running in minutes!
+
 ## ✨ **Features**
 
 ### **🎯 Landing Page**
